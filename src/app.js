@@ -1,11 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom';
-require('./styles/main.styl')
+import Router from './router'
+import styles from './styles/main.styl'
 
-const HelloWorld = React.createClass({
-  render() {
-    return <div>Hellow world!</div>
+window.app = {
+  init() {
+    this.router = new Router()
+    this.router.history.start()
   }
-})
+}
 
-ReactDOM.render(<HelloWorld />, document.body)
+window.app.init()
