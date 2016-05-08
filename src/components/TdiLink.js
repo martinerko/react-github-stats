@@ -1,3 +1,4 @@
+import app from 'ampersand-app'
 import React, { Component } from 'react'
 import localLinks from 'local-links'
 

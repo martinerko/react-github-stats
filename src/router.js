@@ -20,7 +20,7 @@ export default Router.extend({
       )
     }
 
-    ReactDOM.render(page, document.body.appendChild(document.createElement("div")))
+    ReactDOM.render(page, document.body)
   },
 
   public() {
