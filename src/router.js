@@ -1,8 +1,9 @@
 import Router from 'ampersand-router'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import PublicPage from './pages/public'
-import FavoritesPage from './pages/favorites'
+import PublicPage from './components/pages/Public'
+import FavoritesPage from './components/pages/Favorites'
+import Layout from './components/Layout'
 
 export default Router.extend({
   routes: {
@@ -10,11 +11,23 @@ export default Router.extend({
     'favorites': 'favorites'
   },
 
+  renderPage(page, layout = true) {
+    if (layout) {
+      page = (
+        <Layout>
+          {page}
+        </Layout>
+      )
+    }
+
+    ReactDOM.render(page, document.body.appendChild(document.createElement("div")))
+  },
+
   public() {
-    ReactDOM.render(<PublicPage/>, document.body)
+    this.renderPage(<PublicPage/>, false)
   },
 
   favorites() {
-    ReactDOM.render(<FavoritesPage/>, document.body)
+    this.renderPage(<FavoritesPage/>)
   }
 })

@@ -10,7 +10,7 @@ export default React.createClass({
         <div>
           <p>Lets find your favorites</p>
           <a href='/login' className='button button-large'>
-            Login with Twitter
+            <span className="twitter-logo">Login with Twitter</span>
           </a>
         </div>
       </div>
