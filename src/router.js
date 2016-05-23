@@ -1,4 +1,4 @@
-import app from 'ampersand-app';
+import { statsModel } from 'ampersand-app';
 import Router from 'ampersand-router';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -27,11 +27,12 @@ export default Router.extend({
   },
 
   public() {
-    this.renderPage(<PublicPage/>);
+    this.renderPage(<PublicPage />);
   },
 
   topStarredRepositories() {
-    app.statsModel.topStarredRepos.fetch();
+    statsModel.topStarredRepos.loadData();
+
     this.renderPage(<TopStarredRepositoriesPage repos={app.statsModel.topStarredRepos.items} />);
   },
 
