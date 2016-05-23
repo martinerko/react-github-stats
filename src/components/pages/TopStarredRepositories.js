@@ -12,7 +12,7 @@ export default React.createClass({
       <div>
         <h2>Top Starred Repositories</h2>
         <ul>
-          {repos.map((r) => <li key={r.id}><a href={r.html_url} target="_blank">{r.full_name}</a></li>)}
+          {repos.map((r) => <li key={r.id}><span className="octicon octicon-repo"></span> <a href={r.html_url} target="_blank">{r.full_name}</a> [<span className="octicon octicon-star"></span> {r.stargazers_count}] </li>)}
         </ul>
       </div>
       );

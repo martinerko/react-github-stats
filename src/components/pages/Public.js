@@ -5,10 +5,11 @@ export default class Public extends Component {
     return (
       <div>
         <header role='banner'>
-          <h1>React Github Stats</h1>
+          <h1>React GitHub Stats</h1>
+          <div className="mega-octicon octicon-mark-github"></div>
         </header>
         <div>
-          <p>Lets discover some nice stats!</p>
+          <p className="intro">Lets discover some nice stats!</p>
         </div>
       </div>
       );

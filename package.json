@@ -1,7 +1,7 @@
 {
   "name": "react-github-stats",
   "version": "1.0.0",
-  "description": "Simple React app with some awesome Github stats.",
+  "description": "Simple React app with some awesome GitHub stats.",
   "main": "src/app.js",
   "scripts": {
     "lint": "eslint src",
@@ -27,6 +27,7 @@
     "file-loader": "^0.8.5",
     "hjs-webpack": "^2.6.0",
     "local-links": "^1.4.0",
+    "octicons": "^3.5.0",
     "postcss-loader": "^0.9.1",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
