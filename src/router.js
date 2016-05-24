@@ -5,8 +5,10 @@ import ReactDOM from 'react-dom';
 import PublicPage from './components/pages/Public';
 import Layout from './components/Layout';
 import TopStarredRepositoriesPage from './components/pages/TopStarredRepositories';
+import MostFollowedUsersPage from './components/pages/MostFollowedUsers';
 
 export default Router.extend({
+
   routes: {
     '': 'public',
     'topstarredrepositories': 'topStarredRepositories',
@@ -14,16 +16,20 @@ export default Router.extend({
     'userswithmostrepositories': 'usersWithMostRepositories'
   },
 
+  initialize: function() {
+    this.appRoot = document.body.appendChild(document.createElement("div"));
+  },
+
   renderPage(page, layout = true) {
     if (layout) {
       page = (
-        <Layout statsModel={app.statsModel}>
+        <Layout>
           {page}
         </Layout>
       );
     }
 
-    ReactDOM.render(page, document.body);
+    ReactDOM.render(page, this.appRoot);
   },
 
   public() {
@@ -33,14 +39,15 @@ export default Router.extend({
   topStarredRepositories() {
     statsModel.topStarredRepos.loadData();
 
-    this.renderPage(<TopStarredRepositoriesPage repos={app.statsModel.topStarredRepos.items} />);
+    this.renderPage(<TopStarredRepositoriesPage repos={statsModel.topStarredRepos.items} />);
   },
 
   mostFollowedUsers() {
-    //this.renderPage(<MostFollowedUsersPage />);
-  },
-
-  usersWithMostRepositories() {
-    //this.renderPage(<UsersWithMostRepositoriesPage />);
+    statsModel.mostFollowedUsers.loadData();
+    this.renderPage(<MostFollowedUsersPage users={statsModel.mostFollowedUsers.items} />);
   }
+
+// usersWithMostRepositories() {
+//   this.renderPage(<UsersWithMostRepositoriesPage  users={statsModel.topStarredRepos.items} />);
+// }
 });

@@ -1,14 +1,14 @@
-import app from 'ampersand-app'
-import React, { Component } from 'react'
-import localLinks from 'local-links'
+import app from 'ampersand-app';
+import React, { Component } from 'react';
+import localLinks from 'local-links';
 
 export default class TdiLink extends Component {
   onClick(event) {
-    const pathname = localLinks.getLocalPathname(event)
+    const pathname = localLinks.getLocalPathname(event);
 
     if (pathname) {
-      event.preventDefault()
-      app.router.history.navigate(pathname)
+      event.preventDefault();
+      app.router.history.navigate(pathname);
     }
   }
 
@@ -17,6 +17,6 @@ export default class TdiLink extends Component {
       <div onClick={this.onClick} {...this.props}>
           {this.props.children}
       </div>
-    )
+      );
   }
 }
