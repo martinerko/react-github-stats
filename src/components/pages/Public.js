@@ -9,7 +9,7 @@ export default class Public extends Component {
           <div className="mega-octicon octicon-mark-github"></div>
         </header>
         <div>
-          <p className="intro">Lets discover some nice stats!</p>
+          <p className="intro">Let's discover some nice stats!</p>
         </div>
       </div>
       );

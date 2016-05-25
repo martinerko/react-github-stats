@@ -6,6 +6,7 @@ import PublicPage from './components/pages/Public';
 import Layout from './components/Layout';
 import TopStarredRepositoriesPage from './components/pages/TopStarredRepositories';
 import MostFollowedUsersPage from './components/pages/MostFollowedUsers';
+import UsersWithMostRepositoriesPage from './components/pages/UsersWithMostRepositories';
 
 export default Router.extend({
 
@@ -17,7 +18,7 @@ export default Router.extend({
   },
 
   initialize: function() {
-    this.appRoot = document.body.appendChild(document.createElement("div"));
+    this.appRoot = document.body.appendChild(document.createElement('div'));
   },
 
   renderPage(page, layout = true) {
@@ -38,16 +39,16 @@ export default Router.extend({
 
   topStarredRepositories() {
     statsModel.topStarredRepos.loadData();
-
     this.renderPage(<TopStarredRepositoriesPage repos={statsModel.topStarredRepos.items} />);
   },
 
   mostFollowedUsers() {
     statsModel.mostFollowedUsers.loadData();
     this.renderPage(<MostFollowedUsersPage users={statsModel.mostFollowedUsers.items} />);
-  }
+  },
 
-// usersWithMostRepositories() {
-//   this.renderPage(<UsersWithMostRepositoriesPage  users={statsModel.topStarredRepos.items} />);
-// }
+  usersWithMostRepositories() {
+    statsModel.usersWithMostRepos.loadData();
+    this.renderPage(<UsersWithMostRepositoriesPage users={statsModel.usersWithMostRepos.items} />);
+  }
 });

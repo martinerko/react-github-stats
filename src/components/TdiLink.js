@@ -1,4 +1,4 @@
-import app from 'ampersand-app';
+import { router } from 'ampersand-app';
 import React, { Component } from 'react';
 import localLinks from 'local-links';
 
@@ -8,7 +8,7 @@ export default class TdiLink extends Component {
 
     if (pathname) {
       event.preventDefault();
-      app.router.history.navigate(pathname);
+      router.history.navigate(pathname);
     }
   }
 

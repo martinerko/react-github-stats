@@ -7,7 +7,7 @@ export default Model.extend({
   },
 
   initialize: function() {
-    this.url = `https://api.github.com/search${this._svc}&order=desc&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`;
+    this.url = `https://api.github.com/search${this._svc}&order=desc&page=1&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`;
     this._fetched = false;
   },
 
